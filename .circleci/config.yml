@@ -10,15 +10,17 @@ jobs:
       size: medium
     steps:
       - checkout
-      - run: msbuild.exe -t:Rebuild -p:Configuration=Release
-  test:
-      steps:
-       - run: C:\Users\circleci\project\bin\Release\test_dot_net.exe
+      - run: 
+        name: build
+        command: msbuild.exe -t:Rebuild -p:Configuration=Release
+      - run:
+        name: excute
+        command: C:\Users\circleci\project\bin\Release\test_dot_net.exe
+  
 workflows:
   my-workflow:
     jobs:
       - build
-      - test
 
 # # Define a job to be invoked later in a workflow.
 # # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
