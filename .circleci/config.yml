@@ -11,7 +11,7 @@ jobs:
     steps:
       - checkout
       - run: 'Write-Host ''Hello, Windows'''
-      - run: vstool build --configuration:Release
+      - run: msbuild.exe
 workflows:
   my-workflow:
     jobs:
