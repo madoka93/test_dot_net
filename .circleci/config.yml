@@ -10,12 +10,7 @@ jobs:
       size: medium
     steps:
       - checkout
-      - run:
-        name: build
-        command: msbuild.exe -t:Rebuild -p:Configuration=Release
-      - run:
-        name: excute
-        command: C:\Users\circleci\project\bin\Release\test_dot_net.exe
+      - run: msbuild.exe -t:Rebuild -p:Configuration=Release |  C:\Users\circleci\project\bin\Release\test_dot_net.exe
   
 workflows:
   my-workflow:
