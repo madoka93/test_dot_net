@@ -8,7 +8,7 @@ namespace test_dot_net
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello");
+            Console.WriteLine("Hello 2");
         }
     }
 }
