@@ -10,13 +10,15 @@ jobs:
       size: medium
     steps:
       - checkout
-      - run: 'Write-Host ''Hello, Windows'''
       - run: msbuild.exe -t:Rebuild -p:Configuration=Release
-      - run: C:\Users\circleci\project\bin\Release\test_dot_net.exe
+  test:
+      steps:
+       - run: C:\Users\circleci\project\bin\Release\test_dot_net.exe
 workflows:
   my-workflow:
     jobs:
       - build
+      - test
 
 # # Define a job to be invoked later in a workflow.
 # # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
