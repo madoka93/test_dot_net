@@ -11,10 +11,10 @@ jobs:
     steps:
       - checkout
       - run:
-        name: "build"
+        name: build
         command: msbuild.exe -t:Rebuild -p:Configuration=Release
       - run:
-        name: "excute"
+        name: excute
         command: C:\Users\circleci\project\bin\Release\test_dot_net.exe
   
 workflows:
