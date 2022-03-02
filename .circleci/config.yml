@@ -11,6 +11,7 @@ jobs:
     steps:
       - checkout
       - run: 'Write-Host ''Hello, Windows'''
+      - run: dotnet build --configuration:Release
 workflows:
   my-workflow:
     jobs:
